@@ -45,7 +45,7 @@ jobs:
         envs: GITHUB_SHA
         script: |
           docker pull qwe382/test:${GITHUB_SHA::7}
-          docker tag qwe382/test:${GITHUB_SHA::7} test
+          docker tag qwe382/test:${GITHUB_SHA::7}
           docker stop server
           docker run -d --rm --name server -p 80:8080 test
 
